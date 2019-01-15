@@ -11,7 +11,7 @@ var proxyUrl = process.env.PROXY_URL || function(){console.error("Missing env: P
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-app.all('/chat/*', function(req, res) {
+app.all('/*', function(req, res) {
     var options = {
         method: req.method,
         uri: proxyUrl + req.path,
